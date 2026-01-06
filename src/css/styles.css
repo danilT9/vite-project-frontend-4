@@ -4,6 +4,8 @@
   | default @import url()
   |============================
 */
+@import url('./reset.css');
+@import url('./container.css');
 @import url('./header.css');
 @import url('./cards.css');
 @import url('./card-modal.css');
