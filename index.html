@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite-project-frontend-4/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla App Template</title>
-    
-    <script type="module" crossorigin src="/vite-project-frontend-4/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/vite-project-frontend-4/assets/index-d2415b90.css">
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite-project-frontend-4/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vanilla App Template</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  
+  <script type="module" crossorigin src="/vite-project-frontend-4/commonHelpers.js"></script>
+  <link rel="stylesheet" href="/vite-project-frontend-4/assets/index-36ea5300.css">
+</head>
+
+<body>
+  <div class="container">
     <header>
     <ul>
         <li><img src="" class="logo"></li>
@@ -23,9 +30,62 @@
     </ul>
 </header>
     
+    <!-- WILL BE RENDERED TO PAGE BY JS -->
+ <!-- Я залишила тут посилання і галімий текст для тесту, у js буде мінятись -->
+<div class="backdrop is-hidden" id="events-modal">
+    <div class="modal__events__info">
+        <button class="modal__button__close close-button">
+            <svg class="modal__button__close__icon">
+                <use href="../img/svg/symbol-defs[1].svg#icon-close"></use>
+            </svg>
+        </button>
+        <img src="https://basepaws.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fqj2yxv39d6ig%2F3JWnPdH4DDMjDjSWctrmCr%2Fa5d5fdfe152baab7d4f4210581185db8%2Fabyssinian-cat__1_.jpg&w=640&q=75" alt="#" class="modal__info-img-round">
+        <div class="modal__info__thumb">
+            <img src="https://basepaws.com/_next/image?url=https%3A%2F%2Fimages.ctfassets.net%2Fqj2yxv39d6ig%2F3JWnPdH4DDMjDjSWctrmCr%2Fa5d5fdfe152baab7d4f4210581185db8%2Fabyssinian-cat__1_.jpg&w=640&q=75" alt="#" class="modal__info-img">
+            <ul class="modal__info__list">
+                <li class="modal__info__item">
+                    <h4 class="modal__info__item__title">INFO</h4>
+                    <p class="modal__info__item__text">adadad</p>
+                </li>
+                <li class="modal__info__item">
+                    <h4 class="modal__info__item__title">WHEN</h4>
+                    <p class="modal__info__item__text">adad</p>
+                </li>
+                <li class="modal__info__item">
+                    <h4 class="modal__info__item__title">WHERE</h4>
+                    <p class="modal__info__item__text">adad</p>
+                </li>
+                <li class="modal__info__item">
+                    <h4 class="modal__info__item__title">WHO</h4>
+                    <p class="modal__info__item__text">adad</p>
+                </li>
+                <li class="modal__info__item">
+                    <h4 class="modal__info__item__title">PRICES</h4>
+                    <div class="modal__info__item__thumb">
+                        <svg class="modal__info__item-rect">
+                            <use href="../img/svg/symbol-defs[1].svg#icon-ticket"></use>
+                        </svg>
+                        <p class="modal__info__item__text">Standart UAH</p>
+                    </div>
+                    <button class="modal__info__item-btn" type="button">BUY TICKETS</button>
+                    <div class="modal__info__item__thumb">
+                        <svg class="modal__info__item-rect">
+                            <use href="../img/svg/symbol-defs[1].svg#icon-ticket"></use>
+                        </svg>
+                        <p class="modal__info__item__text">VIP UAH</p>
+                    </div>
+                    <button class="modal__info__item-btn" type="button">BUY TICKETS</button>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="modal__info-btn">MORE FROM THIS AUTHOR</button>
+    </div>
+</div>
     
-    
+  </div>
+  
 
-    
-  </body>
+  
+</body>
+
 </html>
