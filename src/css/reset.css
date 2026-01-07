@@ -1,3 +1,7 @@
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
 *,
 *::after,
 *::before {
@@ -34,6 +38,7 @@ a {
 
 button {
     cursor: pointer;
+    background-color: transparent;
 }
 
 img {
