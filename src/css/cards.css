@@ -1,0 +1,120 @@
+
+  .container {
+    width: 946px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 16px;
+  }
+  
+  .card-list {
+    display: grid;
+    gap: 50px;
+  }
+  
+  @media (min-width: 320px) {
+    .card-list {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .card-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .card-list {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  .card {
+    width: 180px;
+    margin: 0 auto;
+    cursor: pointer;
+  
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  
+  .card-img {
+    width: 180px;
+    height: 227px;
+    object-fit: cover;
+    border-radius: 16px 0 16px 0;
+    display: block;
+  }
+  .card-title {
+    margin: 12px 0 6px;
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .card-date {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+  }
+  
+  .card-place {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    opacity: 0.85;
+  }
+  
+  .location-icon {
+    width: 14px;
+    height: 14px;
+    fill: #ff4081;
+  }
+  
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 60px;
+  }
+  
+  .pagination button {
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+  
+    font-size: 14px;
+    font-weight: 500;
+  
+    cursor: pointer;
+    transition: 
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.3s ease;
+  }
+  
+  .pagination button:hover {
+    background-color: rgba(255, 64, 129, 0.15);
+    transform: translateY(-2px);
+  }
+  
+  .pagination button.active {
+    background-color: #ff4081;
+    border-color: #ff4081;
+    color: #000;
+  
+    transform: scale(1.1);
+  }
+  
