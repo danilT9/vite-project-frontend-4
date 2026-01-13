@@ -12,31 +12,30 @@
     rel="stylesheet">
   
   <script type="module" crossorigin src="/vite-project-frontend-4/commonHelpers.js"></script>
-  <link rel="stylesheet" href="/vite-project-frontend-4/assets/index-1e0a0eaa.css">
+  <link rel="stylesheet" href="/vite-project-frontend-4/assets/index-80795454.css">
 </head>
 
 <body>
-  <div class="container">
-    <header>
-    <ul>
-        <li><img src="" class="logo"></li>
-        <li><h2>TEXT</h2></li>
-        <li>
-            <div>
-                <input type="text" class="search" placeholder="Enter your party">
-                <select name="search" class="filter"></select>
-            </div>
-        </li>
-    </ul>
+  <header class="header">
+    <div class="container">
+        <a href="../index.html" class="logo"><svg class="header_logo">
+            <use href="../img/svg/symbol-defs[1].svg#icon-logo"></use>
+        </svg></a>
+        <h1 class="title">FIND BEST EVENTS AROUND THE WORLD</h1>
+        <div class="using_header">
+            <input type="text" class="search" placeholder="Enter your party">
+            <select name="search" class="filter"></select>
+        </div>
+    </div>
 </header>
-    <main>
+  <main>
     <div class="container">
       <ul class="card-list" id="cardList"></ul>
       <div class="pagination" id="pagination"></div>
     </div>
   </main>
   
-    <!-- WILL BE RENDERED TO PAGE BY JS -->
+  <!-- WILL BE RENDERED TO PAGE BY JS -->
  <!-- Я залишила тут посилання і галімий текст для тесту, у js буде мінятись -->
 <div class="backdrop is-hidden" id="events-modal">
     <div class="modal__events__info">
@@ -87,10 +86,9 @@
         <button type="button" class="modal__info-btn">MORE FROM THIS AUTHOR</button>
     </div>
 </div>
-    <footer>
+  <footer>
     <p class="footer__text">© 2021 | All Rights Reserved | Developed with &#129505; by GoIT Students</p>
 </footer>
-  </div>
   
 
   
