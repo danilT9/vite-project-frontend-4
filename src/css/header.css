@@ -1,0 +1,114 @@
+.header {
+    position: relative;
+    background: linear-gradient(136deg, rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0.00) 92.33%), url("../img/bg_logo.png"), url("../img/background.jpg");
+    background-repeat: no-repeat;
+    background-position: center, left top;
+}
+
+.logo {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    border-radius: 477px;
+    backdrop-filter: blur(15px);
+}
+
+.title {
+    color: #DC56C5;
+    text-align: center;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin: 0 auto;
+    margin-bottom: 52px;
+}
+
+.using_header {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.search, .filter {
+    color: #939393;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.20);
+    backdrop-filter: blur(10px);
+    width: 270px;
+    height: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+
+@media screen and (min-width: 300px) {
+    .header {
+        padding-top: 78px;
+        padding-bottom: 52px;
+        background-size: cover, 106px 90px;
+    } .header_logo {
+        width: 60px;
+        height: 30px;
+    } .logo {
+        top: 20px;
+        left: 20px;
+    }
+
+    .title {
+        font-size: 18px;
+        width: 212px;
+        margin-bottom: 25px;
+    }
+
+    .using_header {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+@media screen and (min-width: 624px) {
+    .header {
+        padding-top: 40px;
+        padding-bottom: 123px;
+        background-size: cover, 169px 121px;
+    } .header_logo {
+        width: 100px;
+        height: 50px;
+    }
+
+    .title {
+        font-size: 30px;
+        width: 353px;
+        margin-bottom: 27px;
+    }
+
+    .using_header {
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+}
+
+@media screen and (min-width: 1080px) {
+    .header {
+        padding-top: 40px;
+        padding-bottom: 133px;
+        background-size: cover, 201px 140px;
+    } .header_logo {
+        width: 136px;
+        height: 68px;
+    }
+
+    .title {
+        font-size: 50px;
+        width: 588px;
+        margin-bottom: 52px;
+    }
+}
