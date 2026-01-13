@@ -1,0 +1,31 @@
+/* PHONE */
+@media screen and (min-width:300px) {
+    footer {
+        padding-bottom: 27px;
+        margin-top: 60px;
+    }
+    .footer__text {
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        
+    }
+}
+
+/* TABLET */
+
+@media screen and (min-width:624px) {
+    footer {
+        padding-bottom: 18px;
+    }
+    .footer__text {
+        font-size: 16px;
+    }
+}
+
+/* DESKTOP */
+@media screen and (min-width:1080px) {
+    footer {
+        margin-top: 80px;
+    }
+}
