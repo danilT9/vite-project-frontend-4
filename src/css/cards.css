@@ -1,9 +1,10 @@
 
-  .container {
+  .container-cards {
     width: 946px;
     max-width: 100%;
     margin: 0 auto;
     padding: 40px 16px;
+    background-color: #000;
   }
   
   .card-list {
@@ -47,18 +48,25 @@
     display: block;
   }
   .card-title {
+    text-align: center;
     margin: 12px 0 6px;
     font-size: 16px;
     font-weight: 700;
+    color: #DC56C5;
   }
   
   .card-date {
+    color: #fff;
     font-size: 14px;
     opacity: 0.8;
     margin-bottom: 4px;
+    text-align: center;
   }
   
   .card-place {
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
     display: flex;
     align-items: center;
     gap: 6px;
@@ -69,7 +77,7 @@
   .location-icon {
     width: 14px;
     height: 14px;
-    fill: #ff4081;
+    fill: #000000;
   }
   
   @keyframes fadeUp {
@@ -116,5 +124,10 @@
     color: #000;
   
     transform: scale(1.1);
+  }
+  .pagination .dots {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    padding: 0 8px;
   }
   
