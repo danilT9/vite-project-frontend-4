@@ -1,3 +1,17 @@
+import { getEventsApi } from "./api/getEventsApi.js";
+
+const cardList = document.getElementById('cardList');
+
+let currentPage = 0;
+let totalPages = 0;
+
+async function fetchEvents() {
+  const data = await getEventsApi(currentPage);
+
+  totalPages = data.totalPages;
+
+  renderCards(data.events);
+}
 
 function renderCards(events) {
   cardList.innerHTML = '';
@@ -27,3 +41,4 @@ function renderCards(events) {
   });
 }
 
+fetchEvents()
