@@ -37,6 +37,17 @@ function renderCards(events) {
       </p>
     `;
 
+    card.addEventListener('click', () => {
+      const modal = document.getElementById("events-modal")
+      modal.classList.remove("is-hidden")
+      console.log(event.id);
+      const close = document.querySelector(".close-button")
+      close.addEventListener('click', ()=> {
+        modal.classList.add("is-hidden")
+      })
+    })
+    
+
     cardList.appendChild(card);
   });
 }

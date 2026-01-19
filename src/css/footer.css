@@ -1,8 +1,9 @@
 /* PHONE */
 @media screen and (min-width:300px) {
     footer {
+        background-color: #0D0D0D;
         padding-bottom: 27px;
-        margin-top: 60px;
+        
     }
     .footer__text {
         text-align: center;
@@ -20,12 +21,5 @@
     }
     .footer__text {
         font-size: 16px;
-    }
-}
-
-/* DESKTOP */
-@media screen and (min-width:1080px) {
-    footer {
-        margin-top: 80px;
     }
 }
