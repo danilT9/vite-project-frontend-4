@@ -1,22 +1,3 @@
-// // let selectedEventId = null;
-
-// // export function handleCardClick(event) {
-// //   selectedEventId = event.id;
-// //   console.log('Clicked event ID:', selectedEventId);
-  
-// //   const modal = document.getElementById("events-modal");
-// //   modal.classList.remove("is-hidden");
-  
-// //   const close = document.querySelector(".close-button");
-// //   close.addEventListener('click', () => {
-// //       modal.classList.add("is-hidden");
-// //   });
-  
-// //   return selectedEventId;
-// // }
-
-
-// // card.addEventListener('click', () => handleCardClick(event));
 const API_KEY = "NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP";
 
 export const getEventByIdApi = async (eventId) => {

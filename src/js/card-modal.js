@@ -45,7 +45,7 @@ function renderModal(eventData) {
   const venue = eventData._embedded?.venues?.[0] || {};
   const mainImage = eventData.images?.find(img => img.ratio === '16_9') || eventData.images?.[0] || { url: '' };
 
-  function limitText(text, limit = 270) {
+  function limitText(text, limit = 200) {
     if (!text || text.length <= limit) return text || '';
     let lastSpace = text.substring(0, limit).lastIndexOf(' ');
     
@@ -71,7 +71,7 @@ function renderModal(eventData) {
       <ul class="modal__info__list">
         <li class="modal__info__item">
           <h4 class="modal__info__item__title">INFO</h4>
-          <p class="modal__info__item__text">${accessibleInfo}</p>
+          <p class="modal__info__item__text">${accessibleInfo || 'Unfortunately, we found nothing about this event.'}</p>
         </li>
         
         <li class="modal__info__item">
