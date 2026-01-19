@@ -55,6 +55,7 @@
         height: 102px;
         border-radius: 50%;
         margin-bottom: 23px;
+        object-fit: cover;
     }
     .modal__info-img {
         display: none;
@@ -84,6 +85,7 @@
         font-size: 16px;
         text-align: center;
         color: #0e0e0e;
+        margin: 0px 16px;
     }
     .modal__info__item__thumb {
         display: flex;
@@ -158,6 +160,10 @@
     .modal__info__item {
         align-items:flex-start;
         justify-content: start;
+    }
+    .modal__info__item__text {
+        margin: 0px 17px 0px 0px;
+        text-align: left;
     }
 
     .modal__info__item-btn{

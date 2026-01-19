@@ -5,12 +5,13 @@ const cardList = document.getElementById('cardList');
 let currentPage = 0;
 let totalPages = 0;
 
-async function fetchEvents() {
+export async function fetchEvents() {
   const data = await getEventsApi(currentPage);
 
   totalPages = data.totalPages;
 
   renderCards(data.events);
+  return data.events
 }
 
 function renderCards(events) {
@@ -36,18 +37,7 @@ function renderCards(events) {
         ${place}
       </p>
     `;
-
-    card.addEventListener('click', () => {
-      const modal = document.getElementById("events-modal")
-      modal.classList.remove("is-hidden")
-      console.log(event.id);
-      const close = document.querySelector(".close-button")
-      close.addEventListener('click', ()=> {
-        modal.classList.add("is-hidden")
-      })
-    })
     
-
     cardList.appendChild(card);
   });
 }
