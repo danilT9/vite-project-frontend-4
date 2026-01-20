@@ -5,12 +5,13 @@ const cardList = document.getElementById('cardList');
 let currentPage = 0;
 let totalPages = 0;
 
-async function fetchEvents() {
+export async function fetchEvents() {
   const data = await getEventsApi(currentPage);
 
   totalPages = data.totalPages;
 
   renderCards(data.events);
+  return data.events
 }
 
 function renderCards(events) {
@@ -36,7 +37,7 @@ function renderCards(events) {
         ${place}
       </p>
     `;
-
+    
     cardList.appendChild(card);
   });
 }
