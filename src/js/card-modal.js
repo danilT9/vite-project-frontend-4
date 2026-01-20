@@ -59,7 +59,7 @@ function renderModal(eventData) {
   modalThumb.innerHTML = `
     <button class="modal__button__close close-button">
       <svg class="modal__button__close__icon">
-        <use href="../img/svg/symbol-defs[1].svg#icon-close"></use>
+        <use href="./img/svg/symbol-defs[1].svg#icon-close"></use>
       </svg>
     </button>
     
