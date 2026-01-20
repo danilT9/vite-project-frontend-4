@@ -32,7 +32,7 @@ function renderCards(events) {
       <p class="card-date">${date}</p>
       <p class="card-place">
       <svg class="location-icon">
-            <use href="./img/svg/symbol-defs[1].svg#icon-vector"></use>
+            <use href="./img/svg/icons.svg#icon-vector"></use>
         </svg>
         ${place}
       </p>
