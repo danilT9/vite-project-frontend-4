@@ -19,8 +19,8 @@ function renderCards(events) {
 
   events.forEach((event, index) => {
     const image = event.images[0]?.url || '';
-    const date = event.dates.start.localDate;
-    const place = event._embedded?.venues[0]?.name || 'Unknown';
+    const date = event.dates?.start?.localDate || 'Unknown date';
+    const place = event._embedded?.venues?.[0]?.name || 'Unknown';
 
     const card = document.createElement('li');
     card.className = 'card';
@@ -102,4 +102,3 @@ function renderPagination() {
   pagination.appendChild(nextBtn);
 }
 
-loadEvents();
