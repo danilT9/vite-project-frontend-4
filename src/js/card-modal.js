@@ -59,7 +59,7 @@ function renderModal(eventData) {
   modalThumb.innerHTML = `
     <button class="modal__button__close close-button">
       <svg class="modal__button__close__icon">
-        <use href="./img/svg/symbol-defs[1].svg#icon-close"></use>
+        <use href="./img/svg/icons.svg#icon-close"></use>
       </svg>
     </button>
     
@@ -88,14 +88,14 @@ function renderModal(eventData) {
                     <h4 class="modal__info__item__title">PRICES</h4>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="./img/svg/symbol-defs[1].svg#icon-ticket"></use>
+                            <use href="./img/svg/icons.svg#icon-ticket"></use>
                         </svg>
                         <p class="modal__info__item__text">Standart ${getRandomInt(100, 300)}-${getRandomInt(350, 600)} UAH</p>
                     </div>
                     <button class="modal__info__item-btn" type="button" onclick="window.open('${eventData.url}', '_blank')">BUY TICKETS</button>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="./img/svg/symbol-defs[1].svg#icon-ticket"></use>
+                            <use href="./img/svg/icons.svg#icon-ticket"></use>
                         </svg>
                         <p class="modal__info__item__text">VIP ${getRandomInt(800, 1000)}-${getRandomInt(1100, 1600)} UAH</p>
                     </div>
