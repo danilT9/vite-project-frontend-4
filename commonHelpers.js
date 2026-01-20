@@ -40,14 +40,14 @@
                     <h4 class="modal__info__item__title">PRICES</h4>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="../img/svg/symbol-defs[1].svg#icon-ticket"></use>
+                            <use href="./img/svg/symbol-defs[1].svg#icon-ticket"></use>
                         </svg>
                         <p class="modal__info__item__text">Standart ${t(100,300)}-${t(350,600)} UAH</p>
                     </div>
                     <button class="modal__info__item-btn" type="button" onclick="window.open('${e.url}', '_blank')">BUY TICKETS</button>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="../img/svg/symbol-defs[1].svg#icon-ticket"></use>
+                            <use href="./img/svg/symbol-defs[1].svg#icon-ticket"></use>
                         </svg>
                         <p class="modal__info__item__text">VIP ${t(800,1e3)}-${t(1100,1600)} UAH</p>
                     </div>
