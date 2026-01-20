@@ -1,4 +1,7 @@
 import { getEventByIdApi } from "./api/getEventByIdApi.js";
+import crossSvg from "../img/svg/icons.svg"
+import priceFirstTest from "../img/svg/icons.svg#icon-ticket"
+import priceSecondTest from "../img/svg/icons.svg"
 
 const modalThumb = document.getElementById("eventsModalThumb");
 const modalElement = document.getElementById("events-modal");
@@ -59,7 +62,7 @@ function renderModal(eventData) {
   modalThumb.innerHTML = `
     <button class="modal__button__close close-button">
       <svg class="modal__button__close__icon">
-        <use href="./img/svg/icons.svg#icon-close"></use>
+        <use href=".${crossSvg}#icon-close"></use>
       </svg>
     </button>
     
@@ -88,14 +91,17 @@ function renderModal(eventData) {
                     <h4 class="modal__info__item__title">PRICES</h4>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="./img/svg/icons.svg#icon-ticket"></use>
+                            <use href="${priceSecondTest}#icon-ticket"></use>
+                        </svg>
+                        <svg class="modal__info__item-rect">
+                            <use href=".${priceFirstTest}"></use>
                         </svg>
                         <p class="modal__info__item__text">Standart ${getRandomInt(100, 300)}-${getRandomInt(350, 600)} UAH</p>
                     </div>
                     <button class="modal__info__item-btn" type="button" onclick="window.open('${eventData.url}', '_blank')">BUY TICKETS</button>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="./img/svg/icons.svg#icon-ticket"></use>
+                            <use href="${priceFirstTest}"></use>
                         </svg>
                         <p class="modal__info__item__text">VIP ${getRandomInt(800, 1000)}-${getRandomInt(1100, 1600)} UAH</p>
                     </div>
