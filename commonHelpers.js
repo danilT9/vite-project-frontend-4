@@ -4,14 +4,14 @@
       <p class="card-date">${s}</p>
       <p class="card-place">
       <svg class="location-icon">
-            <use href="../img/svg/symbol-defs[1].svg#icon-vector"></use>
+            <use href="./img/svg/symbol-defs[1].svg#icon-vector"></use>
         </svg>
         ${o}
       </p>
     `,f.appendChild(a)})}v();const $="NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP",E=async e=>{try{const t=await fetch(`https://app.ticketmaster.com/discovery/v2/events/${e}.json?apikey=${$}`);if(!t.ok)throw new Error(`HTTP error! status: ${t.status}`);return await t.json()}catch(t){return console.error("Error fetching event details:",t),null}},p=document.getElementById("eventsModalThumb"),m=document.getElementById("events-modal");function w(e){const t=new Date(e),n=t.getFullYear(),i=String(t.getMonth()+1).padStart(2,"0"),s=String(t.getDate()).padStart(2,"0"),o=String(t.getHours()).padStart(2,"0"),a=String(t.getMinutes()).padStart(2,"0");return`${n}-${i}-${s}<br>${o}:${a} (Kyiv/Ukraine)`}async function M(e){try{const t=await E(e);if(!t){console.error("Не вдалося отримати деталі події");return}return L(t),m.classList.remove("is-hidden"),I(),t}catch(t){console.error("Помилка при відкритті модалки:",t)}}function L(e){var a,d,r,_;function t(c,l){return c=Math.ceil(c),l=Math.floor(l),Math.floor(Math.random()*(l-c+1))+c}const n=((d=(a=e._embedded)==null?void 0:a.venues)==null?void 0:d[0])||{},i=((r=e.images)==null?void 0:r.find(c=>c.ratio==="16_9"))||((_=e.images)==null?void 0:_[0])||{url:""};function s(c,l=200){if(!c||c.length<=l)return c||"";let u=c.substring(0,l).lastIndexOf(" ");return u===-1&&(u=l),c.substring(0,u)+"..."}let o=s(n.accessibleSeatingDetail);p.innerHTML=`
     <button class="modal__button__close close-button">
       <svg class="modal__button__close__icon">
-        <use href="../img/svg/symbol-defs[1].svg#icon-close"></use>
+        <use href="./img/svg/symbol-defs[1].svg#icon-close"></use>
       </svg>
     </button>
     
