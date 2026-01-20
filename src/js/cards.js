@@ -1,4 +1,5 @@
 import { getEventsApi } from "./api/getEventsApi.js";
+import vector from "../img/svg/icons.svg#icon-vector"
 
 const cardList = document.getElementById('cardList');
 
@@ -6,12 +7,14 @@ let currentPage = 0;
 let totalPages = 0;
 
 async function loadEvents() {
+export async function fetchEvents() {
   const data = await getEventsApi(currentPage);
 
   totalPages = data.totalPages;
 
   renderCards(data.events);
   renderPagination()
+  return data.events
 }
 
 function renderCards(events) {
@@ -32,12 +35,12 @@ function renderCards(events) {
       <p class="card-date">${date}</p>
       <p class="card-place">
       <svg class="location-icon">
-            <use href="../img/svg/symbol-defs[1].svg#icon-vector"></use>
+            <use href="${vector}"></use>
         </svg>
         ${place}
       </p>
     `;
-
+    
     cardList.appendChild(card);
   });
 }
