@@ -1,4 +1,5 @@
 import { getEventsApi } from "./api/getEventsApi.js";
+import vector from "../img/svg/icons.svg#icon-vector"
 
 const cardList = document.getElementById('cardList');
 
@@ -32,7 +33,7 @@ function renderCards(events) {
       <p class="card-date">${date}</p>
       <p class="card-place">
       <svg class="location-icon">
-            <use href="./img/svg/icons.svg#icon-vector"></use>
+            <use href="${vector}"></use>
         </svg>
         ${place}
       </p>
