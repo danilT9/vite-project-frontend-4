@@ -7,7 +7,7 @@ let currentPage = 0;
 let totalPages = 0;
 
 async function loadEvents() {
-export async function fetchEvents() {
+  async function fetchEvents() {
   const data = await getEventsApi(currentPage);
 
   totalPages = data.totalPages;
@@ -103,5 +103,6 @@ function renderPagination() {
   });
 
   pagination.appendChild(nextBtn);
+}
 }
 
