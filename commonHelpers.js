@@ -1,14 +1,24 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))i(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const a of s.addedNodes)a.tagName==="LINK"&&a.rel==="modulepreload"&&i(a)}).observe(document,{childList:!0,subtree:!0});function n(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerPolicy&&(s.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?s.credentials="include":o.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function i(o){if(o.ep)return;o.ep=!0;const s=n(o);fetch(o.href,s)}})();const g="NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP",h=async(e=0)=>{var i;const n=await(await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${g}&page=${e}&size=20`)).json();return console.log(n._embedded),{events:((i=n._embedded)==null?void 0:i.events)||[],totalPages:n.page.totalPages}};document.getElementById("cardList");const v="NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP",y=async e=>{try{const t=await fetch(`https://app.ticketmaster.com/discovery/v2/events/${e}.json?apikey=${v}`);if(!t.ok)throw new Error(`HTTP error! status: ${t.status}`);return await t.json()}catch(t){return console.error("Error fetching event details:",t),null}},b="/vite-project-frontend-4/assets/icons-062340aa.svg#icon-close",f="/vite-project-frontend-4/assets/icons-062340aa.svg#icon-ticket",p=document.getElementById("eventsModalThumb"),d=document.getElementById("events-modal");function $(e){const t=new Date(e),n=t.getFullYear(),i=String(t.getMonth()+1).padStart(2,"0"),o=String(t.getDate()).padStart(2,"0"),s=String(t.getHours()).padStart(2,"0"),a=String(t.getMinutes()).padStart(2,"0");return`${n}-${i}-${o}<br>${s}:${a} (Kyiv/Ukraine)`}async function w(e){try{const t=await y(e);if(!t){console.error("Не вдалося отримати деталі події");return}return E(t),d.classList.remove("is-hidden"),M(),t}catch(t){console.error("Помилка при відкритті модалки:",t)}}function E(e){var a,_,l,u;function t(r,c){return r=Math.ceil(r),c=Math.floor(c),Math.floor(Math.random()*(c-r+1))+r}const n=((_=(a=e._embedded)==null?void 0:a.venues)==null?void 0:_[0])||{},i=((l=e.images)==null?void 0:l.find(r=>r.ratio==="16_9"))||((u=e.images)==null?void 0:u[0])||{url:""};function o(r,c=200){if(!r||r.length<=c)return r||"";let m=r.substring(0,c).lastIndexOf(" ");return m===-1&&(m=c),r.substring(0,m)+"..."}let s=o(n.accessibleSeatingDetail);p.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))c(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const r of s.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&c(r)}).observe(document,{childList:!0,subtree:!0});function n(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerPolicy&&(s.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?s.credentials="include":o.crossOrigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function c(o){if(o.ep)return;o.ep=!0;const s=n(o);fetch(o.href,s)}})();const g="NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP",I=async(t=0)=>{var c;const n=await(await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${g}&page=${t}&size=20`)).json();return{events:((c=n._embedded)==null?void 0:c.events)||[],totalPages:n.page.totalPages}},M=async(t=0,e,n="")=>{var s;const o=await(await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?apikey=${g}&page=${t}&size=20&keyword=${e}&countryCode=${n}`)).json();return{events:((s=o._embedded)==null?void 0:s.events)||[],totalPages:o.page.totalPages}},T="/vite-project-frontend-4/assets/icons-062340aa.svg#icon-vector";localStorage.setItem("page",0);const h=document.querySelector(".filter"),S=document.getElementById("cardList"),p=document.querySelector(".search");let v=Number(localStorage.getItem("page"));p.value="";h.value="";const y=async(t,e="",n="")=>await M(t,e,n).then(c=>{const o=c.events;S.innerHTML="",o.forEach((s,r)=>{var i,d,b,$,w,E;const u=((i=s.images[0])==null?void 0:i.url)||"",l=((b=(d=s.dates)==null?void 0:d.start)==null?void 0:b.localDate)||"Unknown date",f=((E=(w=($=s._embedded)==null?void 0:$.venues)==null?void 0:w[0])==null?void 0:E.name)||"Unknown",a=document.createElement("li");a.className="card",a.style.animationDelay=`${r*.1}s`,a.innerHTML=`
+            <img class="card-img" src="${u}" alt="${s.name}" />
+            <h3 class="card-title">${s.name}</h3>
+            <p class="card-date">${l}</p>
+            <p class="card-place">
+            <svg class="location-icon">
+                    <use href="${T}"></use>
+                </svg>
+                ${f}
+            </p>
+            `,S.appendChild(a)})});y(v,p.value);const P=t=>{t.preventDefault();const e=t.target.value,n=h.value;y(v,e,n)},j=t=>{t.preventDefault();const e=p.value,n=t.target.value;y(v,e,n)};h.addEventListener("change",_.debounce(j,500));p.addEventListener("input",_.debounce(P,500));document.getElementById("cardList");const U=async t=>{try{const e=await fetch(`https://app.ticketmaster.com/discovery/v2/events/${t}.json?apikey=${g}`);if(!e.ok)throw new Error(`HTTP error! status: ${e.status}`);return await e.json()}catch(e){return console.error("Error fetching event details:",e),null}},A="/vite-project-frontend-4/assets/icons-062340aa.svg#icon-close",k="/vite-project-frontend-4/assets/icons-062340aa.svg#icon-ticket",L=document.getElementById("eventsModalThumb"),m=document.getElementById("events-modal");function C(t){const e=new Date(t),n=e.getFullYear(),c=String(e.getMonth()+1).padStart(2,"0"),o=String(e.getDate()).padStart(2,"0"),s=String(e.getHours()).padStart(2,"0"),r=String(e.getMinutes()).padStart(2,"0");return`${n}-${c}-${o}<br>${s}:${r} (Kyiv/Ukraine)`}async function O(t){try{const e=await U(t);if(!e){console.error("Не вдалося отримати деталі події");return}return H(e),m.classList.remove("is-hidden"),B(),e}catch(e){console.error("Помилка при відкритті модалки:",e)}}function H(t){var r,u,l,f;function e(a,i){return a=Math.ceil(a),i=Math.floor(i),Math.floor(Math.random()*(i-a+1))+a}const n=((u=(r=t._embedded)==null?void 0:r.venues)==null?void 0:u[0])||{},c=((l=t.images)==null?void 0:l.find(a=>a.ratio==="16_9"))||((f=t.images)==null?void 0:f[0])||{url:""};function o(a,i=200){if(!a||a.length<=i)return a||"";let d=a.substring(0,i).lastIndexOf(" ");return d===-1&&(d=i),a.substring(0,d)+"..."}let s=o(n.accessibleSeatingDetail);L.innerHTML=`
     <button class="modal__button__close close-button">
       <svg class="modal__button__close__icon">
-        <use href="${b}"></use>
+        <use href="${A}"></use>
       </svg>
     </button>
     
-    <img src="${i.url}" alt="${e.name}" class="modal__info-img-round">
+    <img src="${c.url}" alt="${t.name}" class="modal__info-img-round">
     
     <div class="modal__info__thumb">
-      <img src="${i.url}" alt="${e.name}" class="modal__info-img">
+      <img src="${c.url}" alt="${t.name}" class="modal__info-img">
       
       <ul class="modal__info__list">
         <li class="modal__info__item">
@@ -18,7 +28,7 @@
         
         <li class="modal__info__item">
           <h4 class="modal__info__item__title">WHEN</h4>
-          <p class="modal__info__item__text">${$(e.dates.start.dateTime)}</p>
+          <p class="modal__info__item__text">${C(t.dates.start.dateTime)}</p>
         </li>
         
         <li class="modal__info__item">
@@ -30,24 +40,24 @@
                     <h4 class="modal__info__item__title">PRICES</h4>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="${f}"></use>
+                            <use href="${k}"></use>
                         </svg>
-                        <p class="modal__info__item__text">Standart ${t(100,300)}-${t(350,600)} UAH</p>
+                        <p class="modal__info__item__text">Standart ${e(100,300)}-${e(350,600)} UAH</p>
                     </div>
-                    <button class="modal__info__item-btn" type="button" onclick="window.open('${e.url}', '_blank')">BUY TICKETS</button>
+                    <button class="modal__info__item-btn" type="button" onclick="window.open('${t.url}', '_blank')">BUY TICKETS</button>
                     <div class="modal__info__item__thumb">
                         <svg class="modal__info__item-rect">
-                            <use href="${f}"></use>
+                            <use href="${k}"></use>
                         </svg>
-                        <p class="modal__info__item__text">VIP ${t(800,1e3)}-${t(1100,1600)} UAH</p>
+                        <p class="modal__info__item__text">VIP ${e(800,1e3)}-${e(1100,1600)} UAH</p>
                     </div>
-                    <button class="modal__info__item-btn" type="button" onclick="window.open('${e.url}', '_blank')">BUY TICKETS</button>
+                    <button class="modal__info__item-btn" type="button" onclick="window.open('${t.url}', '_blank')">BUY TICKETS</button>
             </li>
       </ul>
     </div>
     
-    <button type="button" class="modal__info-btn" onclick="window.open('${e.url}', '_blank')">
+    <button type="button" class="modal__info-btn" onclick="window.open('${t.url}', '_blank')">
       MORE FROM THIS AUTHOR
     </button>
-  `}function M(){const e=p.querySelector(".close-button");e&&(e.onclick=()=>{d.classList.add("is-hidden")}),d.onclick=function(t){t.target===d&&d.classList.add("is-hidden")}}h();setTimeout(()=>{const e=document.getElementById("cardList");function t(){e.addEventListener("click",async n=>{const i=n.target.closest(".card");if(!i)return;const o=e.querySelectorAll(".card"),s=Array.from(o).indexOf(i);try{const l=(await(await fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP&page=0&size=20")).json())._embedded.events;l[s]&&w(l[s].id)}catch(a){console.error("Помилка:",a)}})}t()},1e3);
+  `}function B(){const t=L.querySelector(".close-button");t&&(t.onclick=()=>{m.classList.add("is-hidden")}),m.onclick=function(e){e.target===m&&m.classList.add("is-hidden")}}I();setTimeout(()=>{const t=document.getElementById("cardList");function e(){t.addEventListener("click",async n=>{const c=n.target.closest(".card");if(!c)return;const o=t.querySelectorAll(".card"),s=Array.from(o).indexOf(c);try{const l=(await(await fetch("https://app.ticketmaster.com/discovery/v2/events.json?apikey=NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP&page=0&size=20")).json())._embedded.events;l[s]&&O(l[s].id)}catch(r){console.error("Помилка:",r)}})}e()},1e3);
 //# sourceMappingURL=commonHelpers.js.map
