@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header {
     position: relative;
     background: linear-gradient(136deg, rgba(196, 196, 196, 0.03) 10.75%, rgba(196, 196, 196, 0.00) 92.33%), url("../img/bg_logo.png"), url("../img/background.jpg");
@@ -45,7 +46,6 @@
     padding-left: 30px;
     padding-right: 30px;
 }
-
 
 @media screen and (min-width: 300px) {
     .header {
@@ -111,4 +111,33 @@
         width: 588px;
         margin-bottom: 52px;
     }
+=======
+.container {
+    width: 1080px;
+    padding: 0 15px;
+    margin: 0 auto;
+    
+}
+
+.header_list {
+    list-style: none;
+}
+
+.logo_link {
+    width: 400px;
+    height: 400px;
+    background-image: url("../img/logo.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    border-radius: 150px;
+    background-color: rgba(96, 96, 96, 0.5);
+}
+
+.using_container {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+>>>>>>> origin/header
 }
