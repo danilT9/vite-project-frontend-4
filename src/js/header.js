@@ -1,4 +1,3 @@
-import { getCountriesByApi } from "./api/getFiltredApi.js";
 import { getEventsByKeywordApi } from "./api/getFiltredApi.js"
 import vector from "../img/svg/icons.svg#icon-vector"
 
@@ -7,7 +6,6 @@ const selectFilter = document.querySelector(".filter");
 const cardList = document.getElementById("cardList");
 const search = document.querySelector(".search");
 let page = Number(localStorage.getItem("page"));
-let countriesNames = [];
 search.value = "";
 selectFilter.value = "";
 
@@ -55,19 +53,3 @@ const searchFilterEvent = e => {
 };
 selectFilter.addEventListener("change", _.debounce(searchFilterEvent, 500))
 search.addEventListener("input", _.debounce(searchEvent, 500));
-
-await getCountriesByApi().then(res => {
-    res.forEach((c) => {
-        let country = c._embedded.venues[0].country;
-        if (!countriesNames.includes(country.name)) {
-            countriesNames.push(country.name);
-        }
-    });
-});
-
-countriesNames.forEach(country => {
-    const option = document.createElement("option");
-    option.value = country;
-    option.textContent = country;
-    selectFilter.appendChild(option);
-});
