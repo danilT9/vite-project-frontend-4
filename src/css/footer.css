@@ -1,6 +1,7 @@
 /* PHONE */
 @media screen and (min-width:300px) {
     footer {
+        background-color: #0D0D0D;
         padding-bottom: 27px;
         
     }

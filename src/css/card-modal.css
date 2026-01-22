@@ -166,6 +166,7 @@
     .modal__info__item__text {
         margin: 0px 17px 0px 0px;
         text-align: left;
+        width: 265px;
     }
 
     .modal__info__item-btn{
@@ -216,6 +217,7 @@
 
     .modal__info__item__text {
         font-size: 18px;
+        width: 450px;
     }
 
     .modal__info-btn {
