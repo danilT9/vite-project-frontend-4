@@ -1,5 +1,4 @@
-
-const API_KEY = "NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP";
+export const API_KEY = "NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP";
 
 export const getEventsApi = async (page = 0) => {
   const response = await fetch(
@@ -7,7 +6,6 @@ export const getEventsApi = async (page = 0) => {
   );
 
   const data = await response.json();
-  console.log(data._embedded);
   return {
     events: data._embedded?.events || [],
     totalPages: data.page.totalPages

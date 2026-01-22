@@ -1,4 +1,4 @@
-const API_KEY = "NKfpM5UvowsmCLMzAUmqihz3Fsx0dtjP";
+import { API_KEY } from "./getEventsApi";
 
 export const getEventByIdApi = async (eventId) => {
   try {
