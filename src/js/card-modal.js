@@ -21,6 +21,7 @@ function formatDate(dateString) {
 export async function handleCardClick(eventId) {
   try {
     const eventData = await getEventByIdApi(eventId);
+    console.log(eventId);
     
     if (!eventData) {
       console.error('Не вдалося отримати деталі події');
@@ -126,3 +127,5 @@ function setupModalClose() {
     }
   };
 }
+
+window.handleCardClick = handleCardClick;

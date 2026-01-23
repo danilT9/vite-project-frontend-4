@@ -13,6 +13,7 @@ const getEvents = async(page, keyword = "", countryCode = "") => {
     return await getEventsByKeywordApi(page, keyword, countryCode).then(res => {
         const cards = res.events;
         cardList.innerHTML = "";
+        
         cards.forEach((event, index) => {
             const image = event.images[0]?.url || '';
             const date = event.dates?.start?.localDate || 'Unknown date';
@@ -20,6 +21,7 @@ const getEvents = async(page, keyword = "", countryCode = "") => {
             const card = document.createElement('li');
             card.className = 'card';
             card.style.animationDelay = `${index * 0.1}s`;
+            card.dataset.eventId = event.id;
 
             card.innerHTML = `
             <img class="card-img" src="${image}" alt="${event.name}" />

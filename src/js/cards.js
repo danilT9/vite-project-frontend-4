@@ -29,6 +29,8 @@ function renderCards(events) {
     card.className = 'card';
     card.style.animationDelay = `${index * 0.1}s`;
 
+    card.dataset.eventId = event.id;
+
     card.innerHTML = `
       <img class="card-img" src="${image}" alt="${event.name}" />
       <h3 class="card-title">${event.name}</h3>
